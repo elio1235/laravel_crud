@@ -10,17 +10,18 @@
 <table class="table table-striped table-hover">
       <thead>
     <tr>
-      <th scope="col">#</th>
+      
       <th scope="col">id</th>
       <th scope="col">name</th>
       <th scope="col">school name </th>
       <th scope="col">action</th>
     </tr>
   </thead>
-    @foreach($data as $student){
+  
         <tbody>
+            @foreach($data as $student){
     <tr>
-      <th scope="row">1</th>
+     
       <td>{{$student->id}}</td>
       <td>{{$student->name}}</td>
       <td>{{$student->school->name}}</td>
@@ -33,9 +34,10 @@
                         </form></td>
 
     </tr>
-        </tbody>
     }
     @endforeach 
+        </tbody>
+    
 </table>
 </div>
  </div>

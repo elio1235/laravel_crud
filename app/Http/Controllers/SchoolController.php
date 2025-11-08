@@ -31,12 +31,14 @@ class SchoolController extends Controller
     public function store(Request $request)
     {
         
-
-    $validated = $request->validate([
-        'name' => 'required|string|max:255',
-    ]);
+$validated = $request->validate([
+            'name'=>'required|string|max:6',
+        ],
+        [
+            'required'=>':attribute name should be filled'
+        ]);
     school::create($validated);
-    return redirect()->route('school.index')->with('success', 'School created successfully!');
+    return redirect()->route('school.index');
 
     }
 
@@ -63,8 +65,12 @@ class SchoolController extends Controller
     public function update(Request $request, string $id)
     {
         $validated = $request->validate([
-            'name'=>'required|string|max:255',
-        ]);
+            'name'=>'required|string|max:6',
+        ],
+        [
+            'required'=>':attribute name should be filled'
+        ]
+    );
         $school = school::findOrFail($id);
         $school->update($validated);
         

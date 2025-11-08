@@ -33,6 +33,13 @@
         <li class="nav-item">
         <a class="nav-link" href="{{route('enroll.index')}}">enroll</a>
       </li>
+       </li>
+        <li class="nav-item">
+        <a class="nav-link" href="{{route('signup.create')}}">Signup</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="{{route('users.index')}}">users</a>
+      </li>
       
     </ul>
     <form class="d-flex" role="search">
